@@ -1,9 +1,11 @@
 import '../styles/globals.css'
+import '@fontsource/space-grotesk/500.css'
 import type { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
 import { useEffect } from 'react';
 import { supabase } from '../utils/supabaseClient';
 import { AuthChangeEvent, Session } from '@supabase/supabase-js';
+import theme from '../theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -28,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Component {...pageProps} />
     </ChakraProvider>
     )

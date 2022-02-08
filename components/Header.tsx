@@ -6,7 +6,7 @@ const Header = ({signOut}) => {
         <Flex as='nav' align='center' justify='space-between' px={8} py={6} bg='gray.50'>
             <Flex>
                 <Heading size='md' color='teal.700'>
-                    Photo App
+                    Next App
                 </Heading>
             </Flex>
             <Stack spacing={6} direction='row'>

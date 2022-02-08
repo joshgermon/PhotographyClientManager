@@ -23,7 +23,7 @@ const Login: NextPage = () => {
         const { user, session, error } = await supabase.auth.signIn({ email, password })
         if (error) throw error
             console.log(user)
-            router.push('/')
+            router.push('/clients')
         } catch (error: any) {
             setMessage(error.error_description || error.message);
         } finally {
@@ -33,7 +33,7 @@ const Login: NextPage = () => {
 
     useEffect(()=> {
         if(user) {
-            router.push('/')
+            router.push('/clients')
         }
     }, [])
 
