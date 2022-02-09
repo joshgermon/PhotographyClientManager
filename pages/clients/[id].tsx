@@ -35,10 +35,16 @@ export async function getServerSideProps(context) {
 
     const id = context.params.id
 
-    const { data: client, error } = await supabase.from('client').select('*').eq('id', id)
+    const { data: client, clientError } = await supabase.from('client').select('*').eq('id', id)
+    const { data: sessionsData, sessionsError } = await supabase.from('session').select('*').eq('client', client[0].id)
+
+    const clientWithSessions = {
+        ...client[0],
+        sessions: sessionsData
+    }
 
     return {
-      props: {client: client[0], error: error}, // will be passed to the page component as props
+      props: {client: clientWithSessions}, // will be passed to the page component as props
     }
   }
 
