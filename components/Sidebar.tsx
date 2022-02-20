@@ -21,7 +21,7 @@ const Sidebar = () => {
     return (
         <Flex as='nav' direction='column' align='center' justify='start' flex='0 1 6rem' px={8} py={6} height='100%' top={0} left={0}>
             <Stack spacing={10} pt={20}>
-                <Link href='/'>
+                <Link href='/clients'>
                     <CalendarIcon cursor='pointer' w={5} h={5} />
                 </Link>
                 <Link href='/'>

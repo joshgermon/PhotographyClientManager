@@ -1,4 +1,4 @@
-import { Spinner, Flex, Heading, Badge } from "@chakra-ui/react";
+import { Spinner, Flex, Heading, Badge, Button } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { Client, Session } from "../types";
 import { capitalize } from "../utils/helpers";
@@ -14,7 +14,6 @@ const Invoices = ({ client }: InvoicesProps) => {
 
     const getClientInvoices = async () => {
         const { data: invoicesData, error } = await supabase.from('invoice').select('*').eq('client', client.id)
-        console.log(invoicesData)
         if (!error && invoicesData) {
             setInvoices(invoicesData)
         } else {
